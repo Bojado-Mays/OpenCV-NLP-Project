@@ -36,13 +36,13 @@ def get_all_urls():
     This function scrapes all of the OpenCV repo urls from the Github and returns a list of urls.
     '''
     # The base url for the main Codeup blog page
-    url = '            '
+    url = 'https://github.com/search?o=desc&p=1&q=OpenCV&s=stars&type=Repositories'
     
     # Make request and soup object using helper
     soup = make_soup(url)
     
     # Create a list of the anchor elements that hold the urls.
-    urls_list = soup.find_all('a', class_='jet-listing-dynamic-link__link')
+    urls_list = soup.find_all('a', class_='v-align-middle')
     
     # I'm using a set comprehension to return only unique urls because list contains duplicate urls.
     urls = {link.get('href') for link in urls_list}
@@ -59,11 +59,16 @@ def get_all_urls():
 # TODO: Add your github username to your env.py file under the variable `github_username`
 # TODO: Add more repositories to the `REPOS` list below.
 
-REPOS = [
-    "gocodeup/codeup-setup-script",
-    "gocodeup/movies-application",
-    "torvalds/linux",
-]
+REPOS = ['Hironsan/BossSensor',
+ 'openframeworks/openFrameworks',
+ 'spmallick/learnopencv',
+ 'Ewenwan/MVision',
+ 'oarriaga/face_classification',
+ 'CMU-Perceptual-Computing-Lab/openpose',
+ 'opencv/opencv_contrib',
+ 'vipstone/faceai',
+ 'opencv/opencv',
+ 'PySimpleGUI/PySimpleGUI']
 
 headers = {"Authorization": f"token {github_token}", "User-Agent": github_username}
 
