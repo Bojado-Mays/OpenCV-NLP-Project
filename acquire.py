@@ -35,22 +35,24 @@ def get_all_urls():
     '''
     This function scrapes all of the OpenCV repo urls from the Github and returns a list of urls.
     '''
-    # The base url for the main Codeup blog page
-    url = 'https://github.com/search?o=desc&p=1&q=OpenCV&s=stars&type=Repositories'
+    i = range(1,12)
+    repos = []
+    for num in i:
+        # The base url for the Github search page
+        url = f'https://github.com/search?o=desc&p={num}&q=OpenCV&s=stars&type=Repositories'
+        # Make request and soup object using helper
+        soup = make_soup(url)
+        # Create a list of the anchor elements that hold the urls.
+        urls_list = soup.find_all('a', class_='v-align-middle')
+        # I'm using a set comprehension to return only unique urls because list contains duplicate urls.
+        new_urls = {link.get('href') for link in urls_list}
+        # I'm converting and adding my set to a list of urls.
+        repos = repos + list(new_urls)
     
-    # Make request and soup object using helper
-    soup = make_soup(url)
-    
-    # Create a list of the anchor elements that hold the urls.
-    urls_list = soup.find_all('a', class_='v-align-middle')
-    
-    # I'm using a set comprehension to return only unique urls because list contains duplicate urls.
-    urls = {link.get('href') for link in urls_list}
-
-    # I'm converting my set to a list of urls.
-    urls = list(urls)
+    # Removing first '/' character in all repo urls to fit into next function.
+    repos = [repo[1:] for repo in repos]
         
-    return urls
+    return repos
 
 # TODO: Make a github personal access token.
 #     1. Go here and generate a personal access token https://github.com/settings/tokens
@@ -58,17 +60,6 @@ def get_all_urls():
 #     2. Save it in your env.py file under the variable `github_token`
 # TODO: Add your github username to your env.py file under the variable `github_username`
 # TODO: Add more repositories to the `REPOS` list below.
-
-REPOS = ['Hironsan/BossSensor',
- 'openframeworks/openFrameworks',
- 'spmallick/learnopencv',
- 'Ewenwan/MVision',
- 'oarriaga/face_classification',
- 'CMU-Perceptual-Computing-Lab/openpose',
- 'opencv/opencv_contrib',
- 'vipstone/faceai',
- 'opencv/opencv',
- 'PySimpleGUI/PySimpleGUI']
 
 headers = {"Authorization": f"token {github_token}", "User-Agent": github_username}
 
@@ -136,6 +127,7 @@ def scrape_github_data() -> List[Dict[str, str]]:
     """
     Loop through all of the repos and process them. Returns the processed data.
     """
+    REPOS = get_all_urls()
     return [process_repo(repo) for repo in REPOS]
 
 if __name__ == "__main__":
