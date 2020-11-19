@@ -127,3 +127,50 @@ def scrape_github_data() -> List[Dict[str, str]]:
 if __name__ == "__main__":
     data = scrape_github_data()
     json.dump(data, open("data.json", "w"), indent=1)
+
+
+
+################## Cached OpenCV Repo Data ##################
+
+def get_opencv_repo_data(urls, cached=False):
+    '''
+    This function takes in a list of OpenCV urls and a parameter
+    with default cached == False which scrapes the title and text for each url, 
+    creates a list of dictionaries with the title and text for each blog, 
+    converts list to df, and returns df.
+    If cached == True, the function returns a df from a json file.
+    '''
+    if cached == True:
+        df = pd.read_json('data.json')
+        
+    # cached == False completes a fresh scrape for df     
+    else:
+
+        # Create an empty list to hold dictionaries
+        repos = []
+
+        # Loop through each url in our list of urls
+        for url in urls:
+
+            # Make request and soup object using helper
+            soup = make_soup(url)
+
+            # Save the title of each blog in variable title
+            title = soup.find('h1').text
+
+            # Save the text in each blog to variable text
+            content = soup.find('div', class_="jupiterx-post-content").text
+
+            # Create a dictionary holding the title and content for each blog
+            article = {'title': title, 'content': content}
+
+            # Add each dictionary to the articles list of dictionaries
+            articles.append(article)
+            
+        # convert our list of dictionaries to a df
+        df = pd.DataFrame(articles)
+
+        # Write df to a json file for faster access
+        df.to_json('data.json')
+    
+    return df
