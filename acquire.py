@@ -35,7 +35,7 @@ def get_all_urls():
     '''
     This function scrapes all of the OpenCV repo urls from the Github and returns a list of urls.
     '''
-    i = range(1,12)
+    i = range(1,30)
     repos = []
     for num in i:
         # The base url for the Github search page
