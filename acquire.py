@@ -12,15 +12,6 @@ from typing import Dict, List, Optional, Union, cast
 import requests
 from env import github_token, github_username
 
-################## Acquire OpenCV Repo Data ##################
-def get_repo_data():
-    ''' 
-    
-    '''
-  
-    return df
-
-
 ################## Acquire Helper Functions ##################
 def make_soup(url):
     '''
@@ -53,6 +44,9 @@ def get_all_urls():
     repos = [repo[1:] for repo in repos]
         
     return repos
+
+
+################## Acquire OpenCV Repo Data ##################
 
 # TODO: Make a github personal access token.
 #     1. Go here and generate a personal access token https://github.com/settings/tokens
