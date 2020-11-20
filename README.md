@@ -15,7 +15,6 @@ Our goal is to build a model that can predict what programming language a reposi
 ## Data Dictionary
 | Feature | Definition |
 |---------------------------|--------------------------------------------------|
-
 | Repo              | A directory or storage space for your projects. Code, text, or image files are stored. |  
 | Language          | Refers to programming languages are used in computer programming to implement algorithms. |
 | Readme Contents   | A README file contains information about other files in a directory or archive of computer software, it is usually a simple plain text file. |
