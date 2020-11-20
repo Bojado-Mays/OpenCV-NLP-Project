@@ -39,7 +39,7 @@ Our goal is to build a model that can predict what programming language a reposi
 ### Explore
 - Explore scraped data.
 - Find patterns by creating wordclouds and histograms.
-- Summarize takeaways and conclusions.  
+- Summarize takeaways and conclusions.   
 
 ### Model
 - Fit different models and using different representations of the text (e.g. simple bag of words, TF-IDF values).
