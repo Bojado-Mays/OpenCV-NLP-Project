@@ -22,11 +22,10 @@ def make_soup(url):
     soup = BeautifulSoup(response.text, 'html.parser')
     return soup
 
-def get_all_urls():
-    '''
-    This function scrapes all of the OpenCV repo urls from the Github and returns a list of urls.
-    '''
-    i = range(1,30)
+
+def get_range_urls(low, high):
+
+    i = range(low,high)
     repos = []
     for num in i:
         # The base url for the Github search page
@@ -117,11 +116,11 @@ def process_repo(repo: str) -> Dict[str, str]:
         "readme_contents": readme_contents,
     }
 
-def scrape_github_data() -> List[Dict[str, str]]:
+def scrape_github_data(lst) -> List[Dict[str, str]]:
     """
     Loop through all of the repos and process them. Returns the processed data.
     """
-    REPOS = get_all_urls()
+    REPOS = lst
     return [process_repo(repo) for repo in REPOS]
 
 if __name__ == "__main__":
