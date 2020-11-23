@@ -61,6 +61,7 @@ Our goal is to build a model that can predict what programming language a reposi
 - Combined total of 180 repos explored (Python and C++).
 - Most common words for Python and C++ combined are  &#9 ; , image, and opencv.
 - The symbols &#9 ;, appear to be a tab character of some sort from html related to ascii.
+- Best model was Combined Terms Model that maintained an 83% accuracy on the entire dataset.
 
 ### Future Investigations
 - Are similar patterns seen across other computer vision software repos, such as (Matlab, TensorFlow, and SimpleCV)?
