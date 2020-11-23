@@ -1,4 +1,4 @@
-![Header](OpenCV-5.png "Header")
+![Header](https://github.com/Bojado-Mays/OpenCV-NLP-Project/blob/main/images/OpenCV-3.png)
 
 # OpenCV-NLP-Project
 
