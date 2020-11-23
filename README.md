@@ -37,7 +37,7 @@ Our goal is to build a model that can predict what programming language a reposi
 - Create a prepare.py file. 
 - Build the dataset.
 - Missing values are investigated and handled.
-- Train, Validate, Test
+- Run train, validate, and test.
 - File is a reproducible component that is ready for exploration.
 
 ### Explore
@@ -50,17 +50,17 @@ Our goal is to build a model that can predict what programming language a reposi
 - Build a function that will take in the text of a README file and predict the programming language of repo.
 
 ### Conclusions
-- Even though OpenCV is primarly written in C++, most words repos are written in Python  
+- Even though OpenCV is primarly written in C++, most words repos are written in Python.  
 
 - Repo Languages (out of 250 total most starred repos explored):  
     - Python 40.4% ; 101 repos
     - C++ 31.6%, 79 repos
     - Java 6.4%, 16 repos
     
-- We choose to only explore Python and C++ repos because there are the most significant
-- Combined total of 180 repos explored (Python and C++)
-- Most common words for Python and C++ combined are  &#9 ; , image, and opencv
-- Curious to know the meaning behind  &#9 ; ,could not find anything over it through Google search
+- We choose to only explore Python and C++ repos because there are the most significant.
+- Combined total of 180 repos explored (Python and C++).
+- Most common words for Python and C++ combined are  &#9 ; , image, and opencv.
+- Curious to know the meaning behind  &#9 ; ,could not find anything over it through Google search.
 
 ### Future Investigations
 - Are similar patterns seen across other computer vision software repos, such as (Matlab, TensorFlow, and SimpleCV)?
