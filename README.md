@@ -1,9 +1,7 @@
 ![Header](https://github.com/Bojado-Mays/OpenCV-NLP-Project/blob/main/images/OpenCV-3.png)
 
-# OpenCV-NLP-Project
-
 ## About the Project
-For this project we will be scraping data from GitHub repository README files. We choose to scrape data over OpenCV repos across Github. 
+For this project we will be scraping data from GitHub repository README files. We chose to scrape data over OpenCV (Open Source Computer Vision Library) repos across Github.  
 
 ## Goals
 Our goal is to build a model that can predict what programming language a repository is, given the text of the README file.
