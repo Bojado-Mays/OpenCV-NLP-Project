@@ -27,7 +27,7 @@ Our goal is to build a model that can predict what programming language a reposi
 
 ## Project Steps
 ### Acquire
-- Data is aquired from 150 different (most starred) repos over the topic of OpenCV.
+- Data is aquired from 250 different (most starred) repos over the topic of OpenCV.
 - Write the python code necessary to extract the text of the README file for each repo. 
 - The functions are stored in the acquire.py file.
 - Create a data.json file with a dictionary of all the repos.
@@ -60,7 +60,7 @@ Our goal is to build a model that can predict what programming language a reposi
 - We choose to only explore Python and C++ repos because there are the most significant.
 - Combined total of 180 repos explored (Python and C++).
 - Most common words for Python and C++ combined are  &#9 ; , image, and opencv.
-- Curious to know the meaning behind  &#9 ; ,could not find anything over it through Google search.
+- The symbols &#9 ;, appear to be a tab character of some sort from html related to ascii.
 
 ### Future Investigations
 - Are similar patterns seen across other computer vision software repos, such as (Matlab, TensorFlow, and SimpleCV)?
@@ -70,7 +70,7 @@ Our goal is to build a model that can predict what programming language a reposi
 ## How to Reproduce
 All files are reproducible and available for download and use.
 - [x] Read this README.md
-- [ ] Download the aquire.py, prepare.py, and Final_Report.ipynb files
+- [ ] Download the aquire.py, prepare.py, data.json, and Final_Report.ipynb files
 
 ## Contact Us 
 Dani Bojado
