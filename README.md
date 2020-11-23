@@ -1,5 +1,5 @@
 ![Header](https://github.com/Bojado-Mays/OpenCV-NLP-Project/blob/main/images/OpenCV-3.png)
-small change
+
 ## About the Project
 For this project we will be scraping data from GitHub repository README files. We chose to scrape data over OpenCV (Open Source Computer Vision Library) repos across Github.  
 
